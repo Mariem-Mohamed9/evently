@@ -64,6 +64,11 @@ class AppTheme{
     ),
     ),
     textTheme: TextTheme(
+      headlineSmall: TextStyle(
+        fontSize: 24,
+        fontWeight: FontWeight.bold,
+        color: white
+      ),
       titleLarge: TextStyle(
           fontSize: 20,
           fontWeight: FontWeight.w500,
@@ -73,6 +78,13 @@ class AppTheme{
         fontSize: 16,
         fontWeight: FontWeight.w500,
         color: black,
+      ),
+      titleSmall: TextStyle(
+        fontSize: 20,
+        fontWeight:FontWeight.w400,
+        color: white,
+
+
       ),
     )
   );
