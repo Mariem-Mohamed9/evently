@@ -15,7 +15,7 @@ class TabItem extends StatelessWidget {
     required this.isSelected,
     required this.icon,
     required this.unselectedForegroundColor,
-    required this.selectedBackgroundColor
+    required this.selectedBackgroundColor,
 
 });
 
