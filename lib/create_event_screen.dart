@@ -8,6 +8,7 @@ import 'package:evently/widgets/default_elevated_button.dart';
 import 'package:evently/widgets/default_text_form_field.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:intl/intl.dart';
 
 class CreateEventScreen extends StatefulWidget {
 
@@ -20,11 +21,12 @@ class CreateEventScreen extends StatefulWidget {
 class _CreateEventScreenState extends State<CreateEventScreen> {
 
   int currentIndex=0;
-  //
   CategoryModel selectedCategory=CategoryModel.categories.first;
-
   DateTime ?selectedDate;
   TimeOfDay ?selectedTime;
+  DateFormat dateFormat = DateFormat('d/M/yyyy');
+
+
 
 
   TextEditingController titleController=TextEditingController();
@@ -32,7 +34,6 @@ class _CreateEventScreenState extends State<CreateEventScreen> {
 
   GlobalKey<FormState> formKey= GlobalKey<FormState>();
 
-  DateFormat dateFormat=DateFormat("d/M/yyyy");
 
 
 
