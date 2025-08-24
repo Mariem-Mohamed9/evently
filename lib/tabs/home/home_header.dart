@@ -4,6 +4,7 @@ import 'package:evently/tabs/home/tab_item.dart';
 import 'package:flutter/material.dart';
 
 class HomeHeader extends StatefulWidget {
+  void Function
 
 
   @override
@@ -45,7 +46,11 @@ class _HomeHeaderState extends State<HomeHeader> {
                       labelPadding: EdgeInsets.only(right: 10),
                       onTap: (index){
                       if(currentIndex == index) return;
+
                       currentIndex = index;
+                      CategoryModel? selectedCategory = currentIndex == 0
+                          ? null
+                      :CategoryModel.categories[currentIndex - 1];
                       setState(() {});
 
                       },

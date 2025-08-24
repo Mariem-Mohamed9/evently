@@ -1,7 +1,6 @@
 import 'package:evently/auth/login_screen.dart';
+import 'package:evently/widgets/default_text_form_field.dart';
 import 'package:flutter/material.dart';
-
-import '../default_text_form_field.dart';
 import '../widgets/default_elevated_button.dart';
 
 class RegisterScreen extends StatefulWidget {

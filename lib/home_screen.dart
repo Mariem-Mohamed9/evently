@@ -21,7 +21,7 @@ class _HomeScreenState extends State<HomeScreen> {
     HomeTab(),
     MapTab(),
     LoveTab(),
-    ProfilTab(),
+    ProfileTab(),
   ];
   @override
   Widget build(BuildContext context) {

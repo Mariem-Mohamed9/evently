@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+
 class CategoryModel {
   String id;
   String name;
@@ -7,33 +8,16 @@ class CategoryModel {
   String imageName;
 
 
-  CategoryModel({
-    required this.id,
-    required this.icon,
-    required this.imageName,
-    required this.name,
-});
-  static List <CategoryModel> categories = [
-    CategoryModel(
-        id: '1',
-        icon: Icons.sports_basketball_outlined ,
-        imageName: 'sport',
-        name:'Sport'
-    ),
+  CategoryModel({required this.id , required this.name , required this.icon, required this.imageName ,});
 
-    CategoryModel(
-        id: '2',
-        icon: Icons.cake_outlined ,
-        imageName: 'birthday',
-        name:'Birthday'
-    ),
 
-    CategoryModel(
-        id: '3',
-        icon: Icons.more_time ,
-        imageName: 'meeting',
-        name:'Meeting'
-    ),
+  static List<CategoryModel> categories=[
 
+    CategoryModel(id: "1", name: "sport", icon: Icons.sports_basketball_outlined, imageName: "sport"),
+
+    CategoryModel(id: "2", name: "Birthday", icon: Icons.cake, imageName: "birthday"),
+
+    CategoryModel(id: "3", name: "meetings", icon: Icons.more_time_outlined, imageName: "meeting"),
   ];
+
 }
