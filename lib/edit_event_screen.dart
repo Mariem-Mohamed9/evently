@@ -92,7 +92,7 @@ class _EditEventScreenState extends State<EditEventScreen> {
                         isSelected:currentIndex==CategoryModel.categories.indexOf(category),
                         selectedForegroundColor:AppTheme.white,
                         unselectedForegroundColor: AppTheme.primary,
-                        selectedBackgroundColor:AppTheme.primary)
+                        selectedbackgroundColor:AppTheme.primary)
                     ).toList())
             ),
             Padding(
@@ -119,7 +119,7 @@ class _EditEventScreenState extends State<EditEventScreen> {
                   SizedBox(height: 16),
                   Row(
                     children: [
-                      SvgPicture.asset("assets/icons/date.svg"),
+                      SvgPicture.asset("assets/icons/Calendar_Days.svg"),
                       SizedBox(width: 10),
 
                       Text("Event Date", style: textTheme.titleMedium),
@@ -199,7 +199,7 @@ class _EditEventScreenState extends State<EditEventScreen> {
     FirebaseService.updateEvent(event).then((_){
       Navigator.of(context).pop(true);
       UiUtlis.showSuccessMessage("Event updated Successfully");
-     }
+    }
     ).catchError((error){
       UiUtlis.showErrorMessage("Failed to update event");
       print(error);

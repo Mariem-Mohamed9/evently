@@ -1,34 +1,36 @@
 import 'package:evently/widgets/default_text_form_field.dart';
+import 'package:evently/widgets/event_item.dart';
 import 'package:flutter/material.dart';
 
-import '../../widgets/event_item.dart';
 class LoveTab extends StatelessWidget {
+
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
+    return  SafeArea(
       child: Padding(
-        padding: EdgeInsets.symmetric( horizontal: 16),
+        padding: EdgeInsets.symmetric(horizontal: 16),
         child: Column(
           children: [
-          DefaultTextFormField(hintText: 'Search for Event' ,
-            prefixIconImageName: 'search',
-            onChanged: (query) {},
 
+            DefaultTextFormField(
+              hintText: "Search for Event",
+              prefixIconImageName: "Search",
+              onChanged: (query) {
 
-          ),
-          SizedBox( height: 16),
-          Expanded(
-            child: ListView.separated(
-
-              itemBuilder: ( _,index) => EventItem(),
-              separatorBuilder: ( _ , _) => SizedBox( height: 16),
-              itemCount:20,
+              },
             ),
-          ),
 
+            SizedBox(height: 16),
 
-        ],),
+            /* Expanded(
+            child: ListView.separated(
+              itemBuilder: (_,index) => EventItem(),
+              separatorBuilder: (_,_) => SizedBox(height: 16),
+               itemCount: 10),
+          )*/
+          ],
+        ),
       ),
     );
   }

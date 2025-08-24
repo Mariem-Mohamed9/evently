@@ -12,7 +12,7 @@ import 'package:intl/intl.dart';
 
 class CreateEventScreen extends StatefulWidget {
 
-  static const String routeName= '/create_event';
+  static const String routeName="event";
 
   @override
   State<CreateEventScreen> createState() => _CreateEventScreenState();
@@ -21,12 +21,11 @@ class CreateEventScreen extends StatefulWidget {
 class _CreateEventScreenState extends State<CreateEventScreen> {
 
   int currentIndex=0;
+  //
   CategoryModel selectedCategory=CategoryModel.categories.first;
+
   DateTime ?selectedDate;
   TimeOfDay ?selectedTime;
-  DateFormat dateFormat = DateFormat('d/M/yyyy');
-
-
 
 
   TextEditingController titleController=TextEditingController();
@@ -34,6 +33,7 @@ class _CreateEventScreenState extends State<CreateEventScreen> {
 
   GlobalKey<FormState> formKey= GlobalKey<FormState>();
 
+  DateFormat dateFormat=DateFormat("d/M/yyyy");
 
 
 
@@ -78,14 +78,13 @@ class _CreateEventScreenState extends State<CreateEventScreen> {
                   },
 
 
-                  tabs:CategoryModel.categories.map(
-                          (category) => TabItem(
+                  tabs:CategoryModel.categories.map((category) => TabItem(
                       label: category.name,
                       icon: category.icon,
                       isSelected:currentIndex==CategoryModel.categories.indexOf(category),
                       selectedForegroundColor:AppTheme.white,
                       unselectedForegroundColor: AppTheme.primary,
-                    selectedBackgroundColor: AppTheme.primary,)
+                      selectedbackgroundColor:AppTheme.primary)
                   ).toList()
               ),
             ),
@@ -111,7 +110,7 @@ class _CreateEventScreenState extends State<CreateEventScreen> {
                             return"Title Can Not Be Empty";
                           }
                           return null;
-                        },
+                        }
                     ),
 
                     SizedBox(height: 16),
@@ -119,22 +118,18 @@ class _CreateEventScreenState extends State<CreateEventScreen> {
                     Text("Description" , style: textTheme.titleMedium),
                     SizedBox(height: 8),
 
-                    DefaultTextFormField(hintText: "Event Description" , controller: descriptionController ,
-
-                        validator: (value){
-
+                    DefaultTextFormField(hintText: "Event Description" , controller: descriptionController , validator: (value){
                       if(value==null || value.isEmpty){
                         return"Description Can Not Be Empty";
                       }
                       return null;
-                    },
-                    ),
+                    }),
 
                     SizedBox(height: 16),
 
                     Row(
                       children: [
-                        SvgPicture.asset("assets/icons/time.svg"),
+                        SvgPicture.asset("assets/icons/Calendar_Days.svg"),
                         SizedBox(width: 10),
 
                         Text("Event Date", style: textTheme.titleMedium),
@@ -149,7 +144,7 @@ class _CreateEventScreenState extends State<CreateEventScreen> {
                                   initialEntryMode: DatePickerEntryMode.calendarOnly
                               );
 
-
+                              //لوجيك المستخدم وهو بيدخل الوقت
                               if(date!=null){
 
                                 selectedDate=date;

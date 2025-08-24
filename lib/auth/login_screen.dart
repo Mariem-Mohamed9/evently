@@ -62,7 +62,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   }
                   return null;
                 },
-                isPassword:true;
+                isPassword: true,
               ),
 
               SizedBox(height: 24),

@@ -1,4 +1,3 @@
-import 'package:evently/app_theme.dart';
 import 'package:flutter/material.dart';
 
 class TabItem extends StatelessWidget {
@@ -7,40 +6,38 @@ class TabItem extends StatelessWidget {
   bool isSelected;
   Color selectedForegroundColor;
   Color unselectedForegroundColor;
-  Color selectedBackgroundColor;
+  Color selectedbackgroundColor;
 
   TabItem({
-    required this.label,
-    required this.selectedForegroundColor,
-    required this.isSelected,
-    required this.icon,
-    required this.unselectedForegroundColor,
-    required this.selectedBackgroundColor,
 
-});
+    required this.label ,
+    required this.icon ,
+    required this.isSelected ,
+    required this.selectedForegroundColor ,
+    required this.unselectedForegroundColor ,
+    required this.selectedbackgroundColor ,
+
+  });
 
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.symmetric(vertical:8  , horizontal:16 ),
-      decoration: BoxDecoration(color:
-          isSelected ? selectedBackgroundColor : Colors.transparent,
-        borderRadius: BorderRadius.circular(46),
-        border: isSelected ? null : Border.all(color: AppTheme.white),
-
+      padding: EdgeInsets.symmetric(horizontal: 16 , vertical: 8),
+      decoration: BoxDecoration(
+          color: isSelected? selectedbackgroundColor:Colors.transparent,
+          border: isSelected? null :Border.all(color: unselectedForegroundColor),
+          borderRadius: BorderRadius.circular(46)
       ),
-      child:Row(children: [
-        Icon(icon , size: 24, color: isSelected? selectedForegroundColor : unselectedForegroundColor,),
-        SizedBox(width: 8,),
-        Text(label ,
-          style:
-          Theme.of(context).textTheme.titleMedium!.copyWith(
-              color:isSelected? selectedForegroundColor : unselectedForegroundColor,
-          ),
-        ),
 
-      ],
+      child: Row(
+        children: [
+          Icon(icon , size: 24, color:isSelected? selectedForegroundColor : unselectedForegroundColor ,),
+
+          SizedBox(width: 8),
+
+          Text(label , style: Theme.of(context).textTheme.titleMedium!.copyWith(color: isSelected? selectedForegroundColor : unselectedForegroundColor),)
+        ],
       ),
     );
   }
